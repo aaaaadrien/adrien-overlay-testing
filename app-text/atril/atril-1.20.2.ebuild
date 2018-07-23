@@ -61,6 +61,10 @@ DEPEND="${COMMON_DEPEND}
 	virtual/pkgconfig:*
 	sys-devel/gettext:*"
 
+#PATCHES=(
+#	"${FILESDIR}"/${PN}-1.20.1-epub-webkitgtk.patch
+#)
+
 # Tests use dogtail which is not available on Gentoo.
 RESTRICT="test"
 
