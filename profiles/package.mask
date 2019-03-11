@@ -16,8 +16,8 @@
 >=x11-misc/mozo-1.22
 >=x11-misc/mate-notification-daemon-1.22
 >=x11-terms/mate-terminal-1.22
-#>=x11-themes/mate-themes-meta-3-r3.ebuild-1.22
-#>=x11-themes/mate-themes-3.22.17.ebuild-1.22
+x11-themes/mate-themes-meta::adrien-overlay-testing
+>=x11-themes/mate-themes-3.22.17::adrien-overlay-testing
 >=x11-themes/mate-backgrounds-1.22
 >=x11-themes/mate-icon-theme-faenza-1.22
 >=x11-themes/mate-icon-theme-1.22
