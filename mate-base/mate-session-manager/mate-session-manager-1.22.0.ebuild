@@ -56,8 +56,10 @@ DEPEND="${COMMON_DEPEND}
 
 MATE_FORCE_AUTORECONF=true
 
-# Adrien https://github.com/mate-desktop/mate-session-manager/issues/146#issuecomment-471130324
-PATCHES=( "${FILESDIR}/${PN}-1.22-elogind.patch" )
+# Adrien elogind https://github.com/mate-desktop/mate-session-manager/issues/146#issuecomment-471130324
+# Adrien systemd on non systemd system : https://github.com/mate-desktop/mate-session-manager/pull/192
+PATCHES=( "${FILESDIR}/${PN}-1.22-elogind.patch" 
+		"${FILESDIR}"/${PN}-1.22.0-systemd-fix.patch )
 
 src_configure() {
 	mate_src_configure \
