@@ -25,7 +25,7 @@ RDEPEND="|| (
 			x11-themes/mate-themes:0
 		)
 		(
-			=x11-libs/gtk+-3.22*:3
+			>=x11-libs/gtk+-3.22:3
 			=x11-themes/mate-themes-3.22${MATE_THEMES_V}:0/3.22
 		)
 	)"
