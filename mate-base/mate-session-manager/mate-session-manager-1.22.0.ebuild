@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -22,11 +22,11 @@ IUSE="debug elibc_FreeBSD gnome-keyring ipv6 systemd +xtrans"
 # xdg-user-dirs-update is run during login (see 10-user-dirs-update-gnome below).
 
 COMMON_DEPEND=">=dev-libs/dbus-glib-0.76
-	>=dev-libs/glib-2.36:2
+	>=dev-libs/glib-2.50:2
 	dev-libs/libxslt
 	sys-apps/dbus
 	x11-libs/gdk-pixbuf:2
-	>=x11-libs/gtk+-3.14:3
+	>=x11-libs/gtk+-3.22:3
 	x11-libs/libICE
 	x11-libs/libSM
 	x11-libs/libX11
@@ -48,7 +48,7 @@ RDEPEND="${COMMON_DEPEND}
 	gnome-keyring? ( gnome-base/gnome-keyring )"
 
 DEPEND="${COMMON_DEPEND}
-	>=dev-util/intltool-0.40:*
+	>=dev-util/intltool-0.40
 	>=dev-lang/perl-5
 	>=sys-devel/gettext-0.10.40:*
 	virtual/pkgconfig:*
@@ -60,6 +60,7 @@ MATE_FORCE_AUTORECONF=true
 # Adrien systemd on non systemd system : https://github.com/mate-desktop/mate-session-manager/pull/192
 PATCHES=( "${FILESDIR}/${PN}-1.22-elogind.patch" 
 		"${FILESDIR}"/${PN}-1.22.0-systemd-fix.patch )
+
 
 src_configure() {
 	mate_src_configure \

@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -13,28 +13,27 @@ DESCRIPTION="A session daemon for MATE that makes it easy to manage your laptop 
 LICENSE="GPL-2"
 SLOT="0"
 
-IUSE="+applet gnome-keyring pm-utils policykit systemd test"
+IUSE="+applet gnome-keyring policykit systemd test"
 
 # Interactive testsuite.
 RESTRICT="test"
 
-COMMON_DEPEND=">=dev-libs/dbus-glib-0.70:0
-	>=dev-libs/glib-2.36:2
+COMMON_DEPEND=">=dev-libs/dbus-glib-0.70
+	>=dev-libs/glib-2.50:2
 	>=media-libs/libcanberra-0.10:0[gtk3]
-	>=sys-apps/dbus-1:0
-	>=x11-apps/xrandr-1.3:0
-	>=x11-libs/cairo-1:0
+	>=sys-apps/dbus-1
+	>=x11-apps/xrandr-1.3
+	>=x11-libs/cairo-1
 	>=x11-libs/gdk-pixbuf-2.11:2
-	>=x11-libs/gtk+-3.14:3
-	x11-libs/libX11:0
-	x11-libs/libXext:0
-	x11-libs/libXrandr:0
+	>=x11-libs/gtk+-3.22:3
+	x11-libs/libX11
+	x11-libs/libXext
+	x11-libs/libXrandr
 	>=x11-libs/libnotify-0.7:0
-	x11-libs/pango:0
+	x11-libs/pango
 	applet? ( >=mate-base/mate-panel-1.17.0 )
-	gnome-keyring? ( >=gnome-base/libgnome-keyring-3:0 )
-	pm-utils? ( >=sys-power/upower-pm-utils-0.9.23 )
-	!pm-utils? ( >=sys-power/upower-0.9.23:= )
+	gnome-keyring? ( >=gnome-base/libgnome-keyring-3 )
+	>=sys-power/upower-0.9.23:=
 	systemd? ( sys-apps/systemd )
 	!systemd? ( >=sys-auth/consolekit-0.9.2 )"
 
@@ -43,11 +42,11 @@ RDEPEND="${COMMON_DEPEND}
 
 DEPEND="${COMMON_DEPEND}
 	app-text/docbook-xml-dtd:4.3
-	app-text/rarian:0
+	app-text/rarian
 	>=app-text/scrollkeeper-dtd-1:1.0
-	app-text/yelp-tools:0
+	app-text/yelp-tools
 	>=dev-util/intltool-0.50.1:*
-	x11-base/xorg-proto:0
+	x11-base/xorg-proto
 	sys-devel/gettext:*
 	virtual/pkgconfig:*"
 

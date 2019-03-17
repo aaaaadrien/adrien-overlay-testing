@@ -21,7 +21,7 @@ RDEPEND="${COMMON_DEPEND}
 	gnome-extra/yelp"
 
 DEPEND="${COMMON_DEPEND}
-	>=dev-util/intltool-0.40:*
+	>=dev-util/intltool-0.40
 	app-text/yelp-tools
 	sys-devel/gettext:*
 	virtual/pkgconfig:*

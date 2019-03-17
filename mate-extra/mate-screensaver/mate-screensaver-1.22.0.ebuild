@@ -22,39 +22,39 @@ DOC_CONTENTS="
 
 COMMON_DEPEND="
 	>=dev-libs/dbus-glib-0.71:0
-	>=dev-libs/glib-2.36:2
-	gnome-base/dconf:0
+	>=dev-libs/glib-2.50:2
+	gnome-base/dconf
 	>=mate-base/libmatekbd-1.17.0
 	>=mate-base/mate-desktop-1.17.0
 	>=mate-base/mate-menus-1.10.0
-	>=sys-apps/dbus-0.30:0
+	>=sys-apps/dbus-0.30
 	>=x11-libs/gdk-pixbuf-2.14:2
-	>=x11-libs/libX11-1:0
-	x11-libs/cairo:0
-	>=x11-libs/gtk+-3.14:3
-	x11-libs/libXext:0
-	x11-libs/libXrandr:0
-	x11-libs/libXScrnSaver:0
-	x11-libs/libXxf86misc:0
-	x11-libs/libXxf86vm:0
-	x11-libs/libxklavier:0
-	x11-libs/pango:0
-	virtual/libintl:0
-	consolekit? ( sys-auth/consolekit:0 )
+	>=x11-libs/libX11-1
+	x11-libs/cairo
+	>=x11-libs/gtk+-3.22:3
+	x11-libs/libXext
+	x11-libs/libXrandr
+	x11-libs/libXScrnSaver
+	x11-libs/libXxf86misc
+	x11-libs/libXxf86vm
+	x11-libs/libxklavier
+	x11-libs/pango
+	virtual/libintl
+	consolekit? ( sys-auth/consolekit )
 	libnotify? ( >=x11-libs/libnotify-0.7:0 )
-	opengl? ( virtual/opengl:0 )
-	pam? ( gnome-base/gnome-keyring:0 virtual/pam:0 )
-	!pam? ( kernel_linux? ( sys-apps/shadow:0 ) )
-	systemd? ( sys-apps/systemd:0= )
-	!!<gnome-extra/gnome-screensaver-3:0"
+	opengl? ( virtual/opengl )
+	pam? ( gnome-base/gnome-keyring virtual/pam )
+	!pam? ( kernel_linux? ( sys-apps/shadow ) )
+	systemd? ( sys-apps/systemd:= )
+	!!<gnome-extra/gnome-screensaver-3"
 
 RDEPEND="${COMMON_DEPEND}
 	>=mate-base/mate-session-manager-1.6"
 
 DEPEND="${COMMON_DEPEND}
-	>=dev-util/intltool-0.50.1:*
+	>=dev-util/intltool-0.50.1
 	sys-devel/gettext:*
-	x11-base/xorg-proto:0
+	x11-base/xorg-proto
 	virtual/pkgconfig:*"
 
 src_configure() {

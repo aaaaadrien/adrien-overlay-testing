@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -19,24 +19,24 @@ SLOT="0"
 IUSE="debug"
 
 COMMON_DEPEND="
-	dev-libs/atk:0
-	>=dev-libs/glib-2.36:2
+	dev-libs/atk
+	>=dev-libs/glib-2.50:2
 	dev-python/pygtk:2[${PYTHON_USEDEP}]
 	dev-python/pygobject:2[${PYTHON_USEDEP}]
 	>=mate-base/caja-1.17.1
 	media-libs/fontconfig:1.0
 	media-libs/freetype:2
-	x11-libs/cairo:0
+	x11-libs/cairo
 	x11-libs/gdk-pixbuf:2
-	x11-libs/gtk+:2
-	x11-libs/libXinerama:0
-	x11-libs/pango:0"
+	>=x11-libs/gtk+-3.22:3
+	x11-libs/libXinerama
+	x11-libs/pango"
 
 RDEPEND="${COMMON_DEPEND}
-	net-misc/dropbox:0"
+	net-misc/dropbox"
 
 DEPEND="${COMMON_DEPEND}
-	dev-python/docutils:0
+	dev-python/docutils
 	virtual/pkgconfig:*"
 
 CONFIG_CHECK="~INOTIFY_USER"
@@ -55,8 +55,7 @@ src_prepare() {
 		-e 's|\(DROPBOXD_PATH = \).*|\1"/opt/dropbox/dropboxd"|' \
 			-i caja-dropbox.in || die
 
-	# Use system rst2man.
-	epatch "${FILESDIR}"/${PN}-1.8.0-system-rst2man.patch
+	sed  's|\(rst2man\)|\1.py|' configure.ac || die
 
 	mate_src_prepare
 }

@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -7,8 +7,8 @@ if [[ ${PV} == 9999 ]]; then
 	MATE_BRANCH=9999
 	MATE_THEMES_V=9999
 else
-	inherit versionator
-	MATE_BRANCH="$(get_version_component_range 1-2)"
+	inherit eapi7-ver
+	MATE_BRANCH="$(ver_cut 1-2)"
 	MATE_THEMES_V=3
 	KEYWORDS="amd64 ~arm ~arm64 x86"
 fi
@@ -25,48 +25,48 @@ IUSE="+base -bluetooth help +notification +themes +extras"
 S="${WORKDIR}"
 
 RDEPEND="
-	=mate-base/mate-desktop-${MATE_BRANCH}*:0
-	=mate-base/mate-menus-${MATE_BRANCH}*:0
-	=mate-base/mate-panel-${MATE_BRANCH}*:0
-	=mate-base/mate-session-manager-${MATE_BRANCH}*:0
-	=mate-base/mate-settings-daemon-${MATE_BRANCH}*:0
-	=x11-wm/marco-${MATE_BRANCH}*:0
+	=mate-base/mate-desktop-${MATE_BRANCH}*
+	=mate-base/mate-menus-${MATE_BRANCH}*
+	=mate-base/mate-panel-${MATE_BRANCH}*
+	=mate-base/mate-session-manager-${MATE_BRANCH}*
+	=mate-base/mate-settings-daemon-${MATE_BRANCH}*
+	=x11-wm/marco-${MATE_BRANCH}*
 	base? (
-		=mate-base/caja-${MATE_BRANCH}*:0
-		=mate-base/mate-applets-meta-${MATE_BRANCH}*:0
-		=mate-base/mate-control-center-${MATE_BRANCH}*:0
-		=mate-extra/mate-media-${MATE_BRANCH}*:0
-		=x11-misc/mozo-${MATE_BRANCH}*:0
-		=x11-terms/mate-terminal-${MATE_BRANCH}*:0
+		=mate-base/caja-${MATE_BRANCH}*
+		=mate-base/mate-applets-meta-${MATE_BRANCH}*
+		=mate-base/mate-control-center-${MATE_BRANCH}*
+		=mate-extra/mate-media-${MATE_BRANCH}*
+		=x11-misc/mozo-${MATE_BRANCH}*
+		=x11-terms/mate-terminal-${MATE_BRANCH}*
 	)
-	bluetooth? ( net-wireless/blueman:0 )
+	bluetooth? ( net-wireless/blueman )
 	themes? (
-		=x11-themes/mate-backgrounds-${MATE_BRANCH}*:0
-		=x11-themes/mate-icon-theme-${MATE_BRANCH}*:0
-		>=x11-themes/mate-themes-meta-${MATE_THEMES_V}:0
+		=x11-themes/mate-backgrounds-${MATE_BRANCH}*
+		=x11-themes/mate-icon-theme-${MATE_BRANCH}*
+		>=x11-themes/mate-themes-meta-${MATE_THEMES_V}
 	)
 	extras? (
-		=app-arch/engrampa-${MATE_BRANCH}*:0
-		=app-editors/pluma-${MATE_BRANCH}*:0
-		=app-text/atril-${MATE_BRANCH}*:0
-		=mate-extra/caja-extensions-${MATE_BRANCH}*:0
-		=mate-extra/mate-calc-${MATE_BRANCH}*:0
-		=mate-extra/mate-netbook-${MATE_BRANCH}*:0
-		=mate-extra/mate-power-manager-${MATE_BRANCH}*:0
-		=mate-extra/mate-screensaver-${MATE_BRANCH}*:0
-		=mate-extra/mate-system-monitor-${MATE_BRANCH}*:0
-		=mate-extra/mate-utils-${MATE_BRANCH}*:0
-		=media-gfx/eom-${MATE_BRANCH}*:0
-		sys-apps/gnome-disk-utility:0
+		=app-arch/engrampa-${MATE_BRANCH}*
+		=app-editors/pluma-${MATE_BRANCH}*
+		=app-text/atril-${MATE_BRANCH}*
+		=mate-extra/caja-extensions-${MATE_BRANCH}*
+		=mate-extra/mate-calc-${MATE_BRANCH}*
+		=mate-extra/mate-netbook-${MATE_BRANCH}*
+		=mate-extra/mate-power-manager-${MATE_BRANCH}*
+		=mate-extra/mate-screensaver-${MATE_BRANCH}*
+		=mate-extra/mate-system-monitor-${MATE_BRANCH}*
+		=mate-extra/mate-utils-${MATE_BRANCH}*
+		=media-gfx/eom-${MATE_BRANCH}*
+		sys-apps/gnome-disk-utility
 	)
 	help? (
-		gnome-extra/yelp:0
-		=mate-extra/mate-user-guide-${MATE_BRANCH}*:0
+		gnome-extra/yelp
+		=mate-extra/mate-user-guide-${MATE_BRANCH}*
 	)
 "
 
 PDEPEND="
-	notification? ( =x11-misc/mate-notification-daemon-${MATE_BRANCH}*:0 )
+	notification? ( =x11-misc/mate-notification-daemon-${MATE_BRANCH}* )
 	virtual/notification-daemon:0"
 
 pkg_postinst() {

@@ -18,31 +18,31 @@ SLOT="0"
 IUSE="X applet debug ipv6 test"
 
 COMMON_DEPEND="
-	dev-libs/atk:0
-	>=dev-libs/glib-2.36:2
+	dev-libs/atk
+	>=dev-libs/glib-2.50:2
 	>=gnome-base/libgtop-2.12:2=
-	>=media-libs/libcanberra-0.4:0[gtk3]
-	sys-libs/zlib:0
-	x11-libs/cairo:0
+	>=media-libs/libcanberra-0.4[gtk3]
+	sys-libs/zlib
+	x11-libs/cairo
 	x11-libs/gdk-pixbuf:2
-	>=x11-libs/gtk+-3.14:3
-	x11-libs/libICE:0
-	x11-libs/libSM:0
-	x11-libs/libX11:0
-	x11-libs/libXext:0
-	x11-libs/pango:0
+	>=x11-libs/gtk+-3.22:3
+	x11-libs/libICE
+	x11-libs/libSM
+	x11-libs/libX11
+	x11-libs/libXext
+	x11-libs/pango
 	applet? ( >=mate-base/mate-panel-1.17.0 )"
 
 RDEPEND="${COMMON_DEPEND}"
 
 DEPEND="${COMMON_DEPEND}
-	app-text/rarian:0
+	app-text/rarian
 	>=app-text/scrollkeeper-dtd-1:1.0
-	app-text/yelp-tools:0
+	app-text/yelp-tools
 	dev-util/gtk-doc
 	dev-util/gtk-doc-am
-	>=dev-util/intltool-0.50.1:*
-	x11-base/xorg-proto:0
+	>=dev-util/intltool-0.50.1
+	x11-base/xorg-proto
 	sys-devel/gettext:*
 	virtual/pkgconfig:*"
 

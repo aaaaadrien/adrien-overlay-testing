@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -19,10 +19,10 @@ SLOT="0"
 IUSE="doc"
 
 COMMON_DEPEND="${PYTHON_DEPS}
-	dev-libs/glib:2
+	>=dev-libs/glib-2.50:2
 	dev-python/pygobject:3[${PYTHON_USEDEP}]
 	>=mate-base/caja-1.17.1[introspection]
-	x11-libs/gtk+:3"
+	>=x11-libs/gtk+-3.22:3"
 
 RDEPEND="${COMMON_DEPEND}"
 

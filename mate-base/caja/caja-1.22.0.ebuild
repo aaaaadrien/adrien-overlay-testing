@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -17,25 +17,25 @@ SLOT="0"
 
 IUSE="+introspection +mate packagekit xmp"
 
-COMMON_DEPEND="dev-libs/atk:0
-	>=dev-libs/glib-2.36:2
+COMMON_DEPEND="dev-libs/atk
+	>=dev-libs/glib-2.50:2
 	>=dev-libs/libxml2-2.4.7:2
-	gnome-base/dconf:0
+	gnome-base/dconf
 	>=gnome-base/gvfs-1.10.1:0[udisks]
-	>=mate-base/mate-desktop-1.17.0:0
+	>=mate-base/mate-desktop-1.17.3:0
 	>=media-libs/libexif-0.6.14:0
-	virtual/libintl:0
-	x11-libs/cairo:0
+	virtual/libintl
+	x11-libs/cairo
 	x11-libs/gdk-pixbuf:2
-	>=x11-libs/gtk+-3.0:3[introspection?]
+	>=x11-libs/gtk+-3.22:3[introspection?]
 	>=x11-libs/libnotify-0.7.0:0
-	x11-libs/libICE:0
-	x11-libs/libSM:0
-	x11-libs/libX11:0
-	x11-libs/libXext:0
-	x11-libs/libXft:0
-	x11-libs/libXrender:0
-	>=x11-libs/pango-1.1.2:0
+	x11-libs/libICE
+	x11-libs/libSM
+	x11-libs/libX11
+	x11-libs/libXext
+	x11-libs/libXft
+	x11-libs/libXrender
+	>=x11-libs/pango-1.1.2
 	introspection? ( >=dev-libs/gobject-introspection-0.6.4:= )
 	packagekit? ( app-admin/packagekit-base )
 	xmp? ( >=media-libs/exempi-1.99.5:2 )
@@ -44,11 +44,11 @@ COMMON_DEPEND="dev-libs/atk:0
 RDEPEND="${COMMON_DEPEND}"
 
 DEPEND="${COMMON_DEPEND}
-	>=dev-lang/perl-5:0=
-	dev-util/gdbus-codegen:0
+	>=dev-lang/perl-5:=
+	dev-util/gdbus-codegen
 	dev-util/gtk-doc
 	dev-util/gtk-doc-am
-	>=dev-util/intltool-0.40.1:*
+	>=dev-util/intltool-0.40.1
 	sys-devel/gettext:*
 	virtual/pkgconfig:*"
 

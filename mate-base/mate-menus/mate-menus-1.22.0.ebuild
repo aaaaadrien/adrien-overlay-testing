@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -20,8 +20,8 @@ IUSE="debug +introspection python"
 
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
-COMMON_DEPEND=">=dev-libs/glib-2.36.0:2
-	virtual/libintl:0
+COMMON_DEPEND=">=dev-libs/glib-2.50:2
+	virtual/libintl
 	introspection? ( >=dev-libs/gobject-introspection-0.6.7:= )
 	python? (
 		dev-python/pygtk:2[${PYTHON_USEDEP}]
@@ -31,7 +31,7 @@ COMMON_DEPEND=">=dev-libs/glib-2.36.0:2
 RDEPEND="${COMMON_DEPEND}"
 
 DEPEND="${COMMON_DEPEND}
-	>=dev-util/intltool-0.40:*
+	>=dev-util/intltool-0.40
 	sys-devel/gettext:*
 	virtual/pkgconfig:*"
 

@@ -18,26 +18,26 @@ SLOT="0"
 IUSE="X"
 
 COMMON_DEPEND="
-	>=dev-libs/dbus-glib-0.70:0
-	>=dev-libs/glib-2.15.2:2
+	>=dev-libs/dbus-glib-0.70
+	>=dev-libs/glib-2.50:2
 	>=mate-base/caja-1.17.1
-	media-libs/libcanberra:0[gtk3]
-	>=sys-apps/dbus-1.1.1:0
+	media-libs/libcanberra[gtk3]
+	>=sys-apps/dbus-1.1.1
 	>=x11-libs/gdk-pixbuf-2:2
-	>=x11-libs/gtk+-3.14:3
-	x11-libs/libX11:0
-	x11-libs/pango:0
-	>=x11-libs/libnotify-0.7:0
-	virtual/libintl:0"
+	>=x11-libs/gtk+-3.22:3
+	x11-libs/libX11
+	x11-libs/pango
+	>=x11-libs/libnotify-0.7
+	virtual/libintl"
 
 RDEPEND="${COMMON_DEPEND}
-	>=www-apache/mod_dnssd-0.6:0
+	>=www-apache/mod_dnssd-0.6
 	>=www-servers/apache-2.2:2[apache2_modules_dav,apache2_modules_dav_fs,apache2_modules_authn_file,apache2_modules_auth_digest,apache2_modules_authz_groupfile]"
 
 DEPEND="${COMMON_DEPEND}
 	app-text/docbook-xml-dtd:4.1.2
-	app-text/yelp-tools:0
-	>=dev-util/intltool-0.35:*
+	app-text/yelp-tools
+	>=dev-util/intltool-0.35
 	sys-devel/gettext:*
 	virtual/pkgconfig:*"
 

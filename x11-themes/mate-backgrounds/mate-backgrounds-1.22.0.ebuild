@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -13,5 +13,5 @@ DESCRIPTION="A set of backgrounds packaged with the MATE desktop"
 LICENSE="GPL-2"
 SLOT="0"
 
-DEPEND=">=dev-util/intltool-0.35:*
+DEPEND=">=dev-util/intltool-0.35
 	sys-devel/gettext:*"

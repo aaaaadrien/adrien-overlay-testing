@@ -2,7 +2,7 @@ diff --git a/configure.ac b/configure.ac
 index b49d127..6b87389 100644
 --- a/configure.ac
 +++ b/configure.ac
-@@ -370,6 +370,8 @@ fi
+@@ -411,6 +411,8 @@ fi
  AM_CONDITIONAL(HAVE_LIBCPUFREQ, test x$have_libcpufreq = xyes)
  AC_SUBST(LIBCPUFREQ_LIBS)
  
@@ -32,17 +32,8 @@ index 4fa9d4c..ba52fde 100644
 +#endif
  #include "cpufreq-monitor-libcpufreq.h"
  #include "cpufreq-utils.h"
-
-@@ -98,7 +102,7 @@
-         return CPUFREQ_MONITOR (monitor);
- }
  
--#if LINUX_VERSION_CODE > KERNEL_VERSION(4, 7, 0)
-+#ifndef HAVE_CPUPOWER_H
- extern int cpupower_is_cpu_online (unsigned int cpu);
- #endif
-  
-@@ -115,7 +119,7 @@
+@@ -111,7 +115,7 @@
  		/* Check whether it failed because
  		 * cpu is not online.
  		 */

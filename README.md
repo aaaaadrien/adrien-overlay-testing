@@ -3,6 +3,7 @@
 ## IMPORTANT
 
 This overlay is NOT stable. Used for me to test updates of MATE before push to calculate-linux repository.
+Ebuild with sources from http://pub.mate-desktop.org/releases/
 
 ## Install
 
